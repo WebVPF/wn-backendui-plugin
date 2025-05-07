@@ -1,0 +1,195 @@
+:root {
+    --docui-bg-color-code: #f5f2f0;
+    --docui-bg-color-btn-hover: #e6e1de;
+    --docui-bg-color-lang: #c5c5c5;
+    --docui-color-lang: #5a5a5a;
+    --docui-brd-color-example-code: #ccc;
+}
+:root body.dark {
+    --docui-bg-color-code: var(--drk-bg-color-c);
+    --docui-bg-color-btn-hover: #232930;
+    --docui-bg-color-lang: #2a374a;
+    --docui-color-lang: #fff;
+    --docui-brd-color-example-code: var(--drk-border-color);
+}
+
+.docui-container .layout-cell.layout-container {
+    padding: 10px 50px 60px;
+}
+.body-docui a[target="_blank"]:after {
+    content: "\f35d";
+    font-family: 'Font Awesome 6 Free';
+    font-size: 0.8em;
+    display: inline-block;
+    margin-left: 4px;
+    margin-right: 8px;
+    font-weight: 900;
+}
+h2 {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    line-height: 51px;
+    border-bottom: solid 1px var(--drk-color-c);
+}
+h3 {
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+div:has(> button.showCode) {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+}
+button.showCode {
+    padding: 4px 15px;
+    background: var(--docui-bg-color-code);
+    color: #000;
+    border: 0;
+    border-radius: 3px;
+}
+button.showCode:hover {
+    background: var(--docui-bg-color-btn-hover);
+}
+
+.example {
+    padding: 0;
+    transition: padding 0.3s ease-in-out;
+}
+.example.show-code {
+    padding: 20px;
+    border: solid 1px var(--docui-brd-color-example-code);
+    border-radius: 6px 6px 0 0;
+}
+.example + .code-toolbar {
+    display: none;
+}
+.example.show-code + .code-toolbar {
+    display: block;
+    margin-top: -8px;
+}
+.code-toolbar {
+    margin: 30px 0;
+}
+.code-toolbar + p {
+    margin-top: 70px;
+}
+
+pre[class*=language-] {
+    padding-top: 25px;
+}
+div.code-toolbar>.toolbar {
+    top: 0;
+    right: 8px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    /* transition: opacity .3s ease-in-out; */
+    opacity: 1;
+}
+div.code-toolbar>.toolbar>.toolbar-item>span {
+    padding: 3px 20px;
+    color: var(--docui-color-lang);
+    font-size: .8em;
+    cursor: default;
+    background: var(--docui-bg-color-lang);
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+div.code-toolbar>.toolbar>.toolbar-item>button {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 20px;
+}
+/* div.code-toolbar>.toolbar>.toolbar-item>button:focus,
+div.code-toolbar>.toolbar>.toolbar-item>button:hover, */
+div.code-toolbar>.toolbar>.toolbar-item>span:focus,
+div.code-toolbar>.toolbar>.toolbar-item>span:hover {
+    color: var(--docui-color-lang);
+}
+
+
+.example.show-code + .code-toolbar > :not(pre)>code[class*=language-],
+.example.show-code + .code-toolbar > pre[class*=language-] {
+    border: solid 1px var(--docui-brd-color-example-code);
+    border-radius: 0 0 3px 3px;
+}
+
+li code,
+p code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    white-space: break-spaces;
+    background-color: var(--docui-bg-color-code);
+    border-radius: 6px;
+}
+
+
+
+body.dark button.showCode {
+    color: var(--drk-color-c);
+}
+body.dark button.showCode:hover {
+    color: var(--drk-color-a);
+}
+body.dark :not(pre)>code[class*=language-],
+body.dark pre[class*=language-] {
+    background: var(--drk-bg-color-c);
+}
+body.dark code[class*=language-] ::-moz-selection,
+body.dark code[class*=language-]::-moz-selection,
+body.dark pre[class*=language-] ::-moz-selection,
+body.dark pre[class*=language-]::-moz-selection {
+    text-shadow: none;
+    background: rgba(56,139,253,0.25);
+}
+body.dark code[class*=language-] ::selection,
+body.dark code[class*=language-]::selection,
+body.dark pre[class*=language-] ::selection,
+body.dark pre[class*=language-]::selection {
+    text-shadow:none;
+    background: rgba(56,139,253,0.25);
+}
+body.dark div.code-toolbar>.toolbar>.toolbar-item>button {
+    background-color: rgb(16 49 65);
+    color: rgb(148 163 184);
+}
+body.dark div.code-toolbar>.toolbar>.toolbar-item>button:hover {
+    background-color: rgb(24 73 98);
+}
+
+
+
+
+/* Side Navigation */
+.layout-sidenav-container {
+    width: 200px;
+}
+.docsection-name {
+    margin-top: 20px;
+    padding: 8px 22px;
+    font-size: 19px;
+    font-weight: bold;
+    color: #fff;
+}
+#layout-sidenav ul li {
+    text-align: left;
+}
+#layout-sidenav ul li:first-child a {
+    padding-top: 8px;
+}
+#layout-sidenav ul li a {
+    padding: 8px 20px;
+    font-size: 16px;
+}
+#layout-sidenav ul li a i {
+    display: inline-block;
+    font-size: inherit;
+    margin-right: 8px;
+}
